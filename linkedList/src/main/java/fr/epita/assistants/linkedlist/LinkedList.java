@@ -30,7 +30,7 @@ public class LinkedList<T extends Comparable<T>> {
      * The elements must be sorted in ascending order.
      * null elements should be at the end of the list.
      *
-     * @param e Element to be inserted
+     * @param elt Element to be inserted
      **/
     public void insert(T elt) {
         Node node = new Node(elt);
@@ -99,8 +99,8 @@ public class LinkedList<T extends Comparable<T>> {
      **/
     public T remove(T e) {
         Node curr = head;
-        if (curr.data == e) {
-            curr = curr.next;
+        if (e.compareTo(head.data) == 0) {
+            head = head.next;
             return e;
         }
         Node prev = null;
