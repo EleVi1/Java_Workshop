@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Book implements IPaginated, IReadable {
 
-    public List<String> livre;
+    public List<String> pages;
     public String title;
     public int index_page = 0;
 
@@ -13,7 +13,7 @@ public class Book implements IPaginated, IReadable {
     // is the only one able to print it, hence it must not be public.
     Book(String name, List<String> pages) {
         title = name;
-        livre = pages;
+        this.pages = pages;
     }
 
     // Get the name of the book.
@@ -41,11 +41,14 @@ public class Book implements IPaginated, IReadable {
 
     @Override
     public int getPageCount() {
-        return livre.size();
+        return pages.size();
     }
 
     @Override
     public String readCurrentPage() {
-        return livre.get(index_page);
+        if (index_page >= 0 && index_page < getPageCount()) {
+            return pages.get(index_page);
+        }
+        return null;
     }
 }

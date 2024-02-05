@@ -11,6 +11,8 @@ public class EBook implements IPaginated, IEditable {
     public EBook(String name) {
         title = name;
         version = 1.0;
+        pages = null;
+        addPage();
     }
 
     // Get the name of the book.
@@ -37,6 +39,10 @@ public class EBook implements IPaginated, IEditable {
     @Override
     public void deletePage() {
         pages.remove(current_page);
+        if (getPageCount() == 0)
+        {
+            addPage();
+        }
     }
 
     @Override
