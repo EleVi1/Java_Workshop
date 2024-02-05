@@ -20,10 +20,7 @@ public class Trombinoscope {
     }
 
     public Long putPerson(String name, long photoId) {
-        // FIXME: Add logging here
         logger.debug("Putting person (\"%s\", %d)".formatted(name, photoId));
-        Long oldPhotoId = map.put(name, photoId);
-
         if (map.containsKey(name)) {
             logger.trace("Updated entry for person \"%s\"".formatted(name));
         }
@@ -31,7 +28,7 @@ public class Trombinoscope {
         {
             logger.trace("Added entry for person \"%s\"".formatted(name));
         }
-        // FIXME: Add logging here
+        Long oldPhotoId = map.put(name, photoId);
 
         return oldPhotoId;
     }
