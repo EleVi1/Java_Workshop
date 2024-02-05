@@ -1,8 +1,8 @@
-package fr.epita.assistants;
+package fr.epita.assistants.throwback;
 
 public class LongStringException extends StringException {
     public LongStringException(String message, int len) {
-        super("StringException: LongStringException: " + message + " (length: " +
+        super("LongStringException: " + message + " (length: " +
                 len + ")");
     }
 }

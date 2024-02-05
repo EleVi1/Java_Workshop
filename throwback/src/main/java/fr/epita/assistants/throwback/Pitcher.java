@@ -1,4 +1,4 @@
-package fr.epita.assistants;
+package fr.epita.assistants.throwback;
 
 public class Pitcher extends Exception {
 
@@ -26,12 +26,11 @@ public class Pitcher extends Exception {
     public static void throwException(String message) throws
             LongStringException, ShortStringException,
             PositiveIntegerException, NegativeIntegerException,
-            UnknownException
-    {
+            UnknownException {
         int n = message.length();
         if (n == 0)
         {
-            throw new PositiveIntegerException(message);
+            throw new UnknownException(message);
         }
         if (isDigit(message, n))
         {

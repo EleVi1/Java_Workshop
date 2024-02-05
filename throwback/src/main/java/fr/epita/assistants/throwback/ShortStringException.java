@@ -1,8 +1,8 @@
-package fr.epita.assistants;
+package fr.epita.assistants.throwback;
 
 public class ShortStringException extends StringException {
     public ShortStringException(String message, int len) {
-        super("StringException: ShortStringException: " + message + " (length: " +
+        super("ShortStringException: " + message + " (length: " +
                 len + ")");
     }
 }

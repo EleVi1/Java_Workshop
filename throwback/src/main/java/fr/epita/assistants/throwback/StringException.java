@@ -1,7 +1,7 @@
-package fr.epita.assistants;
+package fr.epita.assistants.throwback;
 
 public abstract class StringException extends Exception {
     public StringException(String message) {
-        super(message);
+        super("StringException: " + message);
     }
 }
