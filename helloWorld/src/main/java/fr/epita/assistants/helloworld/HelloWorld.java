@@ -1,7 +1,7 @@
 package fr.epita.assistants.helloworld;
 
 public class HelloWorld {
-    public void printHelloWorld() {
+    public static void printHelloWorld() {
         System.out.print("Hello World!");
     }
 
