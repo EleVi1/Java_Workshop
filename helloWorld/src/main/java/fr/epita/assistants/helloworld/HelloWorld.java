@@ -2,11 +2,11 @@ package fr.epita.assistants.helloworld;
 
 public class HelloWorld {
     public void printHelloWorld() {
-        System.out.println("Hello World!");
+        System.out.print("Hello World!");
     }
 
     public void printHelloWorldErr() {
-        System.err.println("Hello World!" + System.lineSeparator());
+        System.err.println("Hello World!");
     }
 }
 
