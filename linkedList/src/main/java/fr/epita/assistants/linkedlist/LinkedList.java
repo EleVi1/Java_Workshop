@@ -41,7 +41,13 @@ public class LinkedList<T extends Comparable<T>> {
         }
         else {
             Node after = null;
-
+            if (elt.compareTo(curr.data) <= 0)
+            {
+                after = curr;
+                head = node;
+                node.next = after;
+                return;
+            }
             while (curr.next != null)
             {
                 if (elt.compareTo(curr.next.data) <= 0)
@@ -130,6 +136,6 @@ public class LinkedList<T extends Comparable<T>> {
      * Removes all elements from the list.
      **/
     public void clear() {
-        //TODO
+        head = null;
     }
 }
