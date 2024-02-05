@@ -48,13 +48,9 @@ public class GenericSet<T extends Comparable<T>> {
 
     public static GenericSet intersection(GenericSet a, GenericSet b) {
         GenericSet res = new GenericSet();
-        if (a.isEmpty())
+        if (a.isEmpty() || b.isEmpty())
         {
-            return b;
-        }
-        if (b.isEmpty())
-        {
-            return a;
+            return res;
         }
         for (Object elt: a.base_) {
             if (b.has((Comparable) elt)) {

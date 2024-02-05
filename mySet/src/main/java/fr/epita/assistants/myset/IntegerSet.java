@@ -48,13 +48,9 @@ public class IntegerSet {
 
     public static IntegerSet intersection(IntegerSet a, IntegerSet b) {
         IntegerSet res = new IntegerSet();
-        if (a.isEmpty())
+        if (a.isEmpty() || b.isEmpty())
         {
-            return b;
-        }
-        if (b.isEmpty())
-        {
-            return a;
+            return res;
         }
         for (Integer i: a.base_) {
             if (b.has(i)) {
