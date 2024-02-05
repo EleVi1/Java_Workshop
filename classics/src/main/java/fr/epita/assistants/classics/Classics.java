@@ -14,7 +14,7 @@ public class Classics {
         {
             return -1;
         }
-        int res = 1;
+        long res = 1;
         while (n > 0)
         {
             res *= n;
@@ -30,26 +30,29 @@ public class Classics {
      * @param n the nth sequence to compute
      */
     public static long tribonacci(int n) {
-        int f0 = 0;
-        int f1 = 1;
-        int f2 = 1;
-
+        long f0 = 0;
+        long f1 = 1;
+        long f2 = 1;
+        if (n < 0) {
+            return -1;
+        }
         if (n == 0)
         {
             return 0;
         }
-        if (n == 1 || n == 2)
+        if (n < 3)
         {
             return 1;
         }
-        for (int i = 2; i < n; i++)
+        long res = 0;
+        for (int i = 3; i <= n; i++)
         {
-            int tmp = f0;
+            res = f0 + f1 + f2;
             f0 = f1;
             f1 = f2;
-            f2 = f2 + f0 + tmp;
+            f2 = res;
         }
-        return f2;
+        return res;
     }
 
     /**
