@@ -9,6 +9,10 @@ public class Pitcher extends Exception {
         if (msg.charAt(0) == '-')
         {
             i++;
+            if (n == 1)
+            {
+                return false;
+            }
         }
         while (i < n)
         {
@@ -61,7 +65,8 @@ public class Pitcher extends Exception {
         while (i < n)
         {
             if (Character.isLetter(msg.charAt(i)) || msg.charAt(i) == ' ' ||
-            msg.charAt(i) == ',' || msg.charAt(i) == '`' || msg.charAt(i) == '.')
+            msg.charAt(i) == ',' || msg.charAt(i) == '`' || msg.charAt(i) == '.' ||
+            msg.charAt(i) == '\'')
             {
                 i++;
             }
