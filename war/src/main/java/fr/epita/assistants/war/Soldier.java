@@ -22,7 +22,7 @@ public class Soldier extends Combatant {
 
     @Override
     void attack(Vehicle v) {
-        System.out.println("I can't fight this");
+        System.out.println("I can't fight this.");
     }
 
     @Override
@@ -30,7 +30,7 @@ public class Soldier extends Combatant {
         System.out.println(scream);
     }
 
-    public void kill (Soldier soldier) {
-        soldier.health_points = 0;
+    public void kill () {
+        health_points = 0;
     }
 }

@@ -6,7 +6,7 @@ public abstract class Combatant {
 
     void printState()
     {
-        System.err.println("Error 404. Class not found");
+        System.err.println("Error 404. Class not found.");
     }
 
     abstract void attack(Soldier s);
