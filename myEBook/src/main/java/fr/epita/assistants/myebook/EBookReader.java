@@ -26,7 +26,7 @@ public class EBookReader implements IUpdatable, IPaginated, IReadable {
 
     @Override
     public void update(double version) {
-        if (version > this.version)
+        if (version >= this.version)
         {
             this.version = version;
         }

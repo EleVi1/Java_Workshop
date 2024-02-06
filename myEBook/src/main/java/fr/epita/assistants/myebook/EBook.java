@@ -43,7 +43,12 @@ public class EBook implements IPaginated, IEditable {
         pages.remove(current_page);
         if (getPageCount() == 0)
         {
+            current_page = 0;
             addPage();
+        }
+        else
+        {
+            current_page--;
         }
     }
 
