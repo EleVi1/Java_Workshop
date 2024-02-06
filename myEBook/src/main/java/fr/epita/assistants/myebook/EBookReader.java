@@ -16,6 +16,7 @@ public class EBookReader implements IUpdatable, IPaginated, IReadable {
     // Load an ebook into the reader.
     public void openEbook(EBook ebook) {
         this.ebook = ebook;
+        current_page = 0;
     }
 
     @Override
@@ -33,12 +34,12 @@ public class EBookReader implements IUpdatable, IPaginated, IReadable {
 
     @Override
     public void openToPage(int page) {
+
         current_page = page;
     }
 
     @Override
     public int getCurrentPage() {
-
         if (ebook == null)
         {
             return -1;
@@ -48,7 +49,6 @@ public class EBookReader implements IUpdatable, IPaginated, IReadable {
 
     @Override
     public int getPageCount() {
-
         if (ebook == null) {
             return -1;
         }

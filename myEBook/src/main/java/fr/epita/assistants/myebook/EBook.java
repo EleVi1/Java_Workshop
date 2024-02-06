@@ -1,5 +1,6 @@
 package fr.epita.assistants.myebook;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class EBook implements IPaginated, IEditable {
@@ -7,12 +8,12 @@ public class EBook implements IPaginated, IEditable {
     String title;
     List<String> pages;
     double version;
-    int current_page;
+    int current_page = 0;
     public EBook(String name) {
         title = name;
         version = 1.0;
-        pages = null;
-        addPage();
+        pages = new ArrayList<>();
+        pages.add("");
     }
 
     // Get the name of the book.
@@ -23,7 +24,8 @@ public class EBook implements IPaginated, IEditable {
     // Create a book from the EBook.
     // The instantiated book is a version of the ebook, and can no longer be modified
     public Book print() {
-        return new Book(title, pages);
+        List<String> livre = pages;
+        return new Book(title, livre);
     }
 
     @Override
@@ -33,7 +35,7 @@ public class EBook implements IPaginated, IEditable {
 
     @Override
     public void addPage() {
-        pages.add("");
+        pages.add(current_page + 1, "");
     }
 
     @Override
