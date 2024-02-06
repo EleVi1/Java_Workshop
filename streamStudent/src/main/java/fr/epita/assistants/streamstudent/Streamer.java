@@ -34,7 +34,7 @@ public class Streamer {
                 {
                     if (i.getKey().equals(j.getKey()))
                     {
-                        return i.getValue().compareTo(j.getValue());
+                        return j.getValue().compareTo(i.getValue());
                     }
                     return i.getKey().compareTo(j.getKey());
                 }
