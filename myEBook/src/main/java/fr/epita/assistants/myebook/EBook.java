@@ -24,7 +24,8 @@ public class EBook implements IPaginated, IEditable {
     // Create a book from the EBook.
     // The instantiated book is a version of the ebook, and can no longer be modified
     public Book print() {
-        List<String> livre = pages;
+        //List<String> livre = pages;
+        List<String> livre = new ArrayList<>(pages);
         return new Book(title, livre);
     }
 
