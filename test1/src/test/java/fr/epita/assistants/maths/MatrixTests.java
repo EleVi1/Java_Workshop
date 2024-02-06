@@ -101,6 +101,17 @@ public class MatrixTests {
 
     @Test
     @Timeout(value = 10, threadMode = Timeout.ThreadMode.SEPARATE_THREAD)
+    public void testEqual6() {
+        int[][] arr1 = null;
+        Matrix mat1 = new Matrix(arr1);
+
+        int[][] arr2 = {{1, 2, 3}, {4, 5, 6}};
+        Matrix mat2 = new Matrix(arr2);
+        assertEquals(false, mat1.equals(mat2), "Invalid result");
+    }
+
+    @Test
+    @Timeout(value = 10, threadMode = Timeout.ThreadMode.SEPARATE_THREAD)
     public void testMultiply1() {
         int[][] arr1 = null;
         Matrix mat1 = new Matrix(arr1);
