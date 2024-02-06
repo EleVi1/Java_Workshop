@@ -16,17 +16,17 @@ public enum SingletonEnumLogger implements Logger {
         if (level == Level.INFO)
         {
             info_counter++;
-            System.err.println("[INFO] " + message);
+            System.err.println(Logger.getFormattedLog(level, message));
         }
         if (level == Level.WARN)
         {
             warn_counter++;
-            System.err.println("[WARN] " + message);
+            System.err.println(Logger.getFormattedLog(level, message));
         }
         if (level == Level.ERROR)
         {
             error_counter++;
-            System.err.println("[ERROR] " + message);
+            System.err.println(Logger.getFormattedLog(level,message));
         }
     }
 

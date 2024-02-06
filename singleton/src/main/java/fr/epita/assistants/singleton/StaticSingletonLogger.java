@@ -10,10 +10,10 @@ public class StaticSingletonLogger implements Logger {
     private StaticSingletonLogger() {
     }
     private static class InstanceHolder {
-        private static StaticSingletonLogger _INSTANCE;
+        private static StaticSingletonLogger _INSTANCE = new StaticSingletonLogger();
     }
 
-    static StaticSingletonLogger getInstance()
+    public static StaticSingletonLogger getInstance()
     {
         return InstanceHolder._INSTANCE;
     }
@@ -23,17 +23,17 @@ public class StaticSingletonLogger implements Logger {
         if (level == Level.INFO)
         {
             info_counter++;
-            System.err.println("[INFO] " + message);
+            System.err.println(Logger.getFormattedLog(level, message));
         }
         if (level == Level.WARN)
         {
             warn_counter++;
-            System.err.println("[WARN] " + message);
+            System.err.println(Logger.getFormattedLog(level, message));
         }
         if (level == Level.ERROR)
         {
             error_counter++;
-            System.err.println("[ERROR] " + message);
+            System.err.println(Logger.getFormattedLog(level,message));
         }
     }
 
