@@ -67,7 +67,7 @@ public class PizzaStreams {
      * and mozzarella (italian pizza criteria), false otherwise
      */
     public static boolean areAllNatureItalians(Stream<Pizza> pizzaStream) {
-        return (pizzaStream.allMatch(pizz -> pizz.getDough().equals(Dough.NATURE) &&
+        return (pizzaStream.filter(pizza -> pizza.getDough().equals(Dough.NATURE)).allMatch(pizz ->
                 pizz.getTopping().getSauce().equals(Sauce.TOMATO) &&
                 pizz.getTopping().getCheese().equals(Cheese.MOZZARELLA)));
     }
