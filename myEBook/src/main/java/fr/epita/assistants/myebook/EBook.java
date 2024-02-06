@@ -43,7 +43,7 @@ public class EBook implements IPaginated, IEditable {
         pages.remove(current_page);
         if (getPageCount() == 0)
         {
-            addPage();
+            pages.add("");
         }
         if (current_page > 0)
         {
@@ -65,6 +65,7 @@ public class EBook implements IPaginated, IEditable {
 
     @Override
     public int getPageCount() {
+
         return pages.size();
     }
 }
