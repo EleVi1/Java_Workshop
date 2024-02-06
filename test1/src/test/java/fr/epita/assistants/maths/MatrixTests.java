@@ -47,10 +47,10 @@ public class MatrixTests {
     @Test
     @Timeout(value = 10, threadMode = Timeout.ThreadMode.SEPARATE_THREAD)
     public void testEqual1() {
-        int[][] arr1 = {{1, 2, 3}, {1, 2, 3}};
+        int[][] arr1 = {{1, 2}, {1, 2}};
         Matrix mat1 = new Matrix(arr1);
 
-        int[][] arr2 = {{1, 2, 3}, {1, 2, 3}};
+        int[][] arr2 = {{1, 2}, {1, 2}};
         Matrix mat2 = new Matrix(arr2);
         assertEquals(true, mat1.equals(mat2), "Invalid result");
     }
@@ -112,7 +112,7 @@ public class MatrixTests {
     @Test
     @Timeout(value = 10, threadMode = Timeout.ThreadMode.SEPARATE_THREAD)
     public void testEqual6() {
-        String str = "hello";
+        String str[][] = {{"hello", "world", "toto"}};
 
         int[][] arr2 = {{1, 2, 3}, {4, 5, 6}};
         Matrix mat2 = new Matrix(arr2);
