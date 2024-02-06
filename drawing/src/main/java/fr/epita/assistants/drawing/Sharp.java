@@ -1,11 +1,11 @@
 package fr.epita.assistants.drawing;
 
-abstract class Sharp extends Entity {
+public abstract class Sharp extends Entity {
 
     protected int length;
     public Sharp(int length)
     {
-        super(length);
+        super();
         this.length = length;
     }
 }

@@ -5,9 +5,8 @@ public abstract class Entity implements IDrawable {
     private long id;
     static private long SEQUENCE;
 
-    public Entity(long id) {
-        this.id = id;
-        id = SEQUENCE;
+    public Entity() {
+        this.id = SEQUENCE;
         SEQUENCE++;
     }
 

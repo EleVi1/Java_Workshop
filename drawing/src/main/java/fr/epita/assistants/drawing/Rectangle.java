@@ -12,22 +12,28 @@ public class Rectangle extends Sharp {
     @Override
     public void draw()
     {
+        if (length == width && length == 1)
+        {
+            System.out.println("#");
+            return;
+        }
         for (int i = 0; i < width; i++) {
-            System.out.print('#');
+            System.out.print("# ");
         }
         System.out.print(System.lineSeparator());
+        int space = 2 * width;
         for (int i = 1; i < length - 1; i++)
         {
-            System.out.print("#");
-            for (int k = 0; k < width - 2; k++)
+            System.out.print("# ");
+            for (int k = 0; k < space - 4; k++)
             {
                 System.out.print(" ");
             }
-            System.out.print("#");
+            System.out.print("# ");
             System.out.print(System.lineSeparator());
         }
         for (int i = 0; i < width; i++) {
-            System.out.print('#');
+            System.out.print("# ");
         }
         System.out.print(System.lineSeparator());
     }

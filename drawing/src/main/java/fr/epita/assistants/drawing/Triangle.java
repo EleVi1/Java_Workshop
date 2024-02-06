@@ -10,18 +10,23 @@ public class Triangle extends Sharp {
 
     @Override
     public void draw() {
+        if (length == 1)
+        {
+            System.out.println("#");
+            return;
+        }
         for (int i = 0; i < length; i++)
         {
-            for (int j = i; j >= 0; j--)
+            for (int j = 0; j <= i; j++)
             {
-                if (j == i || j == 0 || i == length - 1)
+                if (j == 0 || j == i || i == length - 1)
                 {
                     System.out.print("#");
                 }
-                else
-                {
+                else {
                     System.out.print(" ");
                 }
+                System.out.print(" ");
             }
             System.out.print(System.lineSeparator());
         }

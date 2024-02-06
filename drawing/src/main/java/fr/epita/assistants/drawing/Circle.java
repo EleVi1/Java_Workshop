@@ -6,7 +6,7 @@ public class Circle extends Entity {
 
     public Circle(int radius)
     {
-        super(radius);
+        super();
         rad = radius;
     }
 
