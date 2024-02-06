@@ -1,7 +1,5 @@
 package fr.epita.assistants.drawing;
 
-import fr.epita.assistants.Main;
-
 public class Circle extends Entity {
 
     private int rad;

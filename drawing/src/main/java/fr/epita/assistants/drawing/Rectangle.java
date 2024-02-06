@@ -1,6 +1,5 @@
 package fr.epita.assistants.drawing;
 
-import org.apache.commons.lang3.StringUtils;
 
 public class Rectangle extends Sharp {
 
@@ -13,11 +12,23 @@ public class Rectangle extends Sharp {
     @Override
     public void draw()
     {
-        System.out.println(StringUtils.repeat('#', width));
+        for (int i = 0; i < width; i++) {
+            System.out.print('#');
+        }
+        System.out.print(System.lineSeparator());
         for (int i = 1; i < length - 1; i++)
         {
-            System.out.println('#' + StringUtils.repeat(' ', width - 2) + '#');
+            System.out.print("#");
+            for (int k = 0; k < width - 2; k++)
+            {
+                System.out.print(" ");
+            }
+            System.out.print("#");
+            System.out.print(System.lineSeparator());
         }
-        System.out.println(StringUtils.repeat('#', width));
+        for (int i = 0; i < width; i++) {
+            System.out.print('#');
+        }
+        System.out.print(System.lineSeparator());
     }
 }
