@@ -3,6 +3,7 @@ package fr.epita.assistants.mykitten;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import java.io.IOException;
 
@@ -31,7 +32,8 @@ public class MyKitten {
      * @param wordToReplace The word to replace
      */
     public void replaceByMiaou(String wordToReplace) {
-        streamContent = streamContent.map(line -> line.replaceAll(wordToReplace, "miaou"));
+        final int[] line_nb = {1};
+        streamContent = streamContent.map(line -> (line_nb[0]++) + " " + line.replaceAll(wordToReplace, "miaou"));
     }
 
     /**
