@@ -21,7 +21,7 @@ public class MyRecursiveTask extends RecursiveTask {
     @Override
     public Double compute()
     {
-        if (Math.abs(xUpperBound - xLowerBound) <= 5 && Math.abs(yUpperBound - yLowerBound) <= 5)
+        if (xUpperBound - xLowerBound <= 5 && yUpperBound - yLowerBound <= 5)
         {
             double res = 0;
             int size = Math.abs(xUpperBound - xLowerBound) * Math.abs(yUpperBound - yLowerBound);
@@ -40,17 +40,15 @@ public class MyRecursiveTask extends RecursiveTask {
         }
         else {
             var a1 = new MyRecursiveTask(matrix, xLowerBound, (xUpperBound-xLowerBound) / 2 + xLowerBound, yLowerBound, (yUpperBound - yLowerBound) / 2 + yLowerBound).fork();
-            double q1 = (double) a1.join();
 
             var a2 = new MyRecursiveTask(matrix, xLowerBound, (xUpperBound-xLowerBound) / 2 + xLowerBound, (yUpperBound - yLowerBound) / 2 + yLowerBound, yUpperBound).fork();
-            double q2 = (double) a2.join();
 
             var a3 = new MyRecursiveTask(matrix, (xUpperBound-xLowerBound) / 2 + xLowerBound, xUpperBound, yLowerBound, (yUpperBound - yLowerBound) / 2 + yLowerBound).fork();
-            double q3 = (double) a3.join();
 
             double q4 = new MyRecursiveTask(matrix, (xUpperBound-xLowerBound) / 2 + xLowerBound, xUpperBound, (yUpperBound - yLowerBound) / 2 + yLowerBound, yUpperBound).compute();
 
-            return (q1 + q2 + q3 + q4) / 4;
+            double v = (((double) a1.join() + (double) a2.join() + (double) a3.join() + q4) / 4.);
+            return v;
         }
     }
 }
