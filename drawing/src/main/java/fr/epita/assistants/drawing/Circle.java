@@ -2,33 +2,32 @@ package fr.epita.assistants.drawing;
 
 public class Circle extends Entity {
 
-    private int rad;
+    private int radius;
 
     public Circle(int radius)
     {
         super();
-        rad = radius;
+        this.radius = radius;
     }
-
 
     @Override
     public void draw() {
-        for (int y = -rad; y <= rad; y++)
+        for (int y = -radius; y <= radius; y++)
         {
-            for (int x = -rad; x <= rad; x++)
+            for (int x = -radius; x <= radius; x++)
             {
-                int sqDist = Math.abs(rad*rad - (x*x + y*y));
-                if (sqDist < rad) {
+                int sqDist = Math.abs(radius*radius - (x*x + y*y));
+                if (sqDist < radius) {
                     System.out.print("#");
                 }
                 else {
                     System.out.print(" ");
                 }
-                if (x < rad) {
+                if (x < radius) {
                     System.out.print(" ");
                 }
             }
-            if (y < rad)
+            if (y < radius)
             {
                 System.out.print(System.lineSeparator());
             }
