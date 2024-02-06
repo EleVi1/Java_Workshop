@@ -26,12 +26,15 @@ public class Book implements IPaginated, IReadable {
     public EBook scan()
     {
         EBook ebook = new EBook(title);
-        for (int i = 0; i < getPageCount(); i++)
+        ebook.openToPage(0);
+        ebook.writeCurrentPage(pages.get(0));
+        for (int i = 1; i < getPageCount(); i++)
         {
             ebook.addPage();
             ebook.openToPage(i);
             ebook.writeCurrentPage(pages.get(i));
         }
+
         return ebook;
     }
     @Override
