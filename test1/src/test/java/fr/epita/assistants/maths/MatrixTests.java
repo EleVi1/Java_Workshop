@@ -82,7 +82,7 @@ public class MatrixTests {
         int[][] arr1 = {{1, 2, 3}, {1, 2, 3}};
         Matrix mat1 = new Matrix(arr1);
 
-        int[][] arr2 = {{1, 2, 3}, {1, 0, 3}, {2, 4, 5}};
+        int[][] arr2 = {{1, 2, 3}, {1, 0, 3}};
         Matrix mat2 = new Matrix(arr2);
         assertEquals(false, mat1.equals(mat2), "Invalid result");
     }
@@ -90,33 +90,20 @@ public class MatrixTests {
     @Test
     @Timeout(value = 10, threadMode = Timeout.ThreadMode.SEPARATE_THREAD)
     public void testEqual4() {
-        int[][] arr1 = {};
+        int[][] arr1 = {{1, 2, 3}, {1, 2, 3}};
         Matrix mat1 = new Matrix(arr1);
 
-        int[][] arr2 = {};
-        Matrix mat2 = new Matrix(arr2);
-        assertEquals(true, mat1.equals(mat2), "Invalid result");
-    }
-
-    @Test
-    @Timeout(value = 10, threadMode = Timeout.ThreadMode.SEPARATE_THREAD)
-    public void testEqual5() {
-        int[][] arr1 = null;
-        Matrix mat1 = new Matrix(arr1);
-
-        int[][] arr2 = {{1, 2, 3}, {4, 5, 6}};
-        Matrix mat2 = new Matrix(arr2);
-        assertEquals(false, mat1.equals(mat2), "Invalid result");
+        assertEquals(false, mat1.equals(1), "Invalid result");
     }
 
     @Test
     @Timeout(value = 10, threadMode = Timeout.ThreadMode.SEPARATE_THREAD)
     public void testEqual6() {
-        String str[][] = {{"hello", "world", "toto"}};
+        float arr[] = {1,2,4, 6 };
 
         int[][] arr2 = {{1, 2, 3}, {4, 5, 6}};
         Matrix mat2 = new Matrix(arr2);
-        assertThrows(ClassCastException.class, () -> str.equals(mat2));
+        assertThrows(ClassCastException.class, () -> arr.equals(mat2));
     }
 
     @Test
