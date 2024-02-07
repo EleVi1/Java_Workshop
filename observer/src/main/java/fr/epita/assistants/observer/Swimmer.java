@@ -14,10 +14,10 @@ public class Swimmer  implements Observable<Swimmer> {
     public Swimmer(String swimmer_name) {
         this.swimmer_name = swimmer_name;
         observers = new HashSet<>();
-        System.out.println(swimmer_name + " goes into the sea");
+        System.out.println(swimmer_name + " goes into the sea.");
     }
 
-    public String getSwimmer_name() {
+    public String getName() {
         return swimmer_name;
     }
 
