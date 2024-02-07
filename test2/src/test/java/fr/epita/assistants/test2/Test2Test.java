@@ -82,4 +82,24 @@ public class Test2Test {
             MyServer.stopServer();
         });
     }
+
+    @Test
+    @Timeout(value = 10, threadMode = Timeout.ThreadMode.SEPARATE_THREAD)
+    public void testServer2() {
+        assertThrows(IllegalArgumentException.class, () -> {
+            MyServer.stopServer();
+            long res = Test2.serverGetResponseCode();
+            MyServer.launchServer();
+        });
+    }
+
+    @Test
+    @Timeout(value = 1, threadMode = Timeout.ThreadMode.SEPARATE_THREAD)
+    public void testServer3() {
+        assertThrows(IllegalArgumentException.class, () -> {
+            MyServer.launchServer();
+            long res = Test2.serverGetResponseCode();
+            MyServer.stopServer();
+        });
+    }
 }
