@@ -78,17 +78,20 @@ public class Test2Test {
     public void testServer1() {
         assertThrows(IllegalArgumentException.class, () -> {
             MyServer.launchServer();
-            long res = Test2.serverGetResponseCode();
+            Test2.serverGetResponseCode();
             MyServer.stopServer();
         });
     }
 
     @Test
-    @Timeout(value = 10, threadMode = Timeout.ThreadMode.SEPARATE_THREAD)
+    @Timeout(value = 1, threadMode = Timeout.ThreadMode.SEPARATE_THREAD)
     public void testServer2() {
         assertThrows(IllegalArgumentException.class, () -> {
-            MyServer.stopServer();
-            long res = Test2.serverGetResponseCode();
+            MyServer.launchServer();
+            for (int i = 0; i < 4; i++)
+            {
+                Test2.serverGetResponseCode();
+            }
             MyServer.launchServer();
         });
     }
@@ -98,8 +101,9 @@ public class Test2Test {
     public void testServer3() {
         assertThrows(IllegalArgumentException.class, () -> {
             MyServer.launchServer();
-            long res = Test2.serverGetResponseCode();
+            Test2.serverGetResponseCode();
             MyServer.stopServer();
         });
     }
+
 }
