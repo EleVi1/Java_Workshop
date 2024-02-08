@@ -5,10 +5,10 @@ import java.util.List;
 
 public class Engineer extends Employee implements Assignable{
 
-    public List<String> project;
+    public String project;
     public Engineer(String lastName, String firstName) {
         super(lastName, firstName);
-        project = new ArrayList<>();
+        project = null;
     }
 
     @Override
@@ -18,12 +18,16 @@ public class Engineer extends Employee implements Assignable{
 
     @Override
     public void addProject(String project) {
-        this.project.add(0, project);
+        this.project = project;
     }
 
     @Override
     public boolean hasProject(String project) {
-        return this.project.get(0).equals(project);
+        if (this.project == null)
+        {
+            return false;
+        }
+        return (this.project.compareTo(project) == 0);
     }
 
     @Override
