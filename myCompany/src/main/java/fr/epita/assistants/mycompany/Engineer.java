@@ -1,11 +1,14 @@
 package fr.epita.assistants.mycompany;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Engineer extends Employee implements Assignable{
 
-    private String project;
+    public List<String> project;
     public Engineer(String lastName, String firstName) {
         super(lastName, firstName);
-        project = "";
+        project = new ArrayList<>();
     }
 
     @Override
@@ -15,12 +18,12 @@ public class Engineer extends Employee implements Assignable{
 
     @Override
     public void addProject(String project) {
-        this.project = project;
+        this.project.add(0, project);
     }
 
     @Override
     public boolean hasProject(String project) {
-        return this.project.equals(project);
+        return this.project.get(0).equals(project);
     }
 
     @Override

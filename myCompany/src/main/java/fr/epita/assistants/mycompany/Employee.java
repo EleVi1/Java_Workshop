@@ -1,5 +1,7 @@
 package fr.epita.assistants.mycompany;
 
+import java.nio.charset.StandardCharsets;
+
 abstract public class Employee {
 
     private String lastName;
@@ -21,6 +23,13 @@ abstract public class Employee {
     public void sayMyName()
     {
         System.out.println("My name is " + firstName + " " + lastName + ".");
+    }
+
+    public String toString()
+    {
+        StringBuilder s = new StringBuilder();
+        s.append(getFirstName()).append(" ").append(getLastName());
+        return s.toString();
     }
 
     abstract void sayMyJob();
