@@ -5,6 +5,7 @@ public class Engineer extends Employee implements Assignable{
     private String project;
     public Engineer(String lastName, String firstName) {
         super(lastName, firstName);
+        project = "";
     }
 
     @Override
@@ -25,7 +26,7 @@ public class Engineer extends Employee implements Assignable{
     @Override
     public void listProjects() {
         if (project != null) {
-            System.out.println(getFirstName() + " " + getLastName() + "'s current project is " + project);
+            System.out.println(getFirstName() + " " + getLastName() + "'s current project is " + project + ".");
         }
     }
 }

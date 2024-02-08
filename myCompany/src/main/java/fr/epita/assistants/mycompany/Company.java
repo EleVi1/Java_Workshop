@@ -45,6 +45,7 @@ public class Company {
             System.out.println(e.getFirstName() + " " + e.getLastName() + " is not employed by " + name + ".");
         }
         if (!employees.contains(m)) {
+            err = true;
             System.out.println(m.getFirstName() + " " + m.getLastName() + " is not employed by " + name + ".");
         }
         if (err) {
