@@ -8,7 +8,11 @@ public class StreamsSongs {
 
     public static List<String> getOlderArtists(List<Song> songs)
     {
-        return songs.stream().filter(e -> e.getArtist().getAge() >= 30).map(e -> e.getArtist().getSurname()).limit(10).toList();
+        return songs.stream().filter(e -> e.getArtist().getAge() >= 30)
+                .map(e -> e.getArtist().getSurname())
+                .distinct()
+                .limit(10)
+                .toList();
     }
     public static Integer getSumAges(List<Song> songs)
     {
