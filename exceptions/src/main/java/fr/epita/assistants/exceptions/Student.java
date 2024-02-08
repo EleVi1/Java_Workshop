@@ -13,7 +13,7 @@ public class Student {
         {
             throw new InvalidNameException(name);
         }
-        if (age < 0 || age >= 130)
+        if (age <= 0 || age >= 130)
         {
             throw new InvalidAgeException(age);
         }
